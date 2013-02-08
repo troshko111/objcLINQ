@@ -6,16 +6,20 @@
 //  Copyright (c) 2013 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Where.h"
 
-int main(int argc, const char * argv[])
+int main(int argc, const char *argv[])
 {
-
-    @autoreleasepool {
-        
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
+    @autoreleasepool
+    {
+        NSArray *numbers = @[@1, @2, @3, @4, @5, @6, @7, @8, @9, @10];
+        NSLog(@"Prepare");
+        OLPredicate predicate = ^(id item){ NSLog(@"Predicate");return [item integerValue] < 2;};
+        NSLog(@"After where");
+        for (id item in [numbers where:predicate])
+        {
+            NSLog(@"%@", item);
+        }
     }
 
     return 0;
