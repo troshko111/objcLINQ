@@ -18,8 +18,7 @@ GENERATOR(id, OLCreateEnumerator(id <NSFastEnumeration> collection), (void))
         while ((count = [collection countByEnumeratingWithState:&state objects:stackBuffer count:16]))
         {
             if (!firstLoop && mutationsPtrValue != *state.mutationsPtr)
-                NSLog(@"Fuck");
-                //[NSException raise:NSGenericException format:@"Collection %@ was mutated while being enumerated" arguments:collection];
+                [NSException raise:NSGenericException format:@"Collection was mutated while being enumerated"];
 
             firstLoop = NO;
             mutationsPtrValue = *state.mutationsPtr;
