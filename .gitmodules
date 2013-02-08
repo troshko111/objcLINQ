@@ -1,0 +1,3 @@
+[submodule "MAGenerator"]
+	path = MAGenerator
+	url = git@github.com:mikeash/MAGenerator.git
