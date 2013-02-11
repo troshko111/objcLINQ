@@ -9,5 +9,6 @@
 @interface NSArray(Select)
 
 -(id<NSFastEnumeration>)select:(OLSelector)selector;
+-(id<NSFastEnumeration>)selectIndexed:(OLSelectorWithIndex)selector;
 
 @end
