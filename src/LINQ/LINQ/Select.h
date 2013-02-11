@@ -6,8 +6,8 @@
 #import <Foundation/Foundation.h>
 #import "OLFuncs.h"
 
-@interface NSArray(Where)
+@interface NSArray(Select)
 
--(id<NSFastEnumeration>)where:(OLPredicate)predicate;
+-(id<NSFastEnumeration>)select:(OLSelector)selector;
 
 @end

@@ -3,9 +3,9 @@
 //
 
 
-#import "OLBlockFastEnumerator.h"
+#import "OLBlockEnumerator.h"
 
-@implementation OLBlockFastEnumerator
+@implementation OLBlockEnumerator
 {
     OLEnumerator _next;
 }

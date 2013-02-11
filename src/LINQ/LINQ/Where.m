@@ -4,10 +4,10 @@
 
 
 #import "Where.h"
-#import "OLBlockFastEnumerator.h"
-#import "Generators.h"
+#import "OLBlockEnumerator.h"
+#import "OLGenerators.h"
 
-@implementation NSArray (LINQ)
+@implementation NSArray (Where)
 
 - (id <NSFastEnumeration>)where:(OLPredicate)predicate
 {
@@ -21,17 +21,12 @@
     OLEnumerator enumerator = OLCreateEnumerator(self);
     OLEnumerator next = ^
     {
-        id item = enumerator();
-        if (item)
-        {
-            while (item && !predicate(item))
-                item = enumerator();
-            return item;
-        }
-        return (id)nil;
+        id item;
+        while ((item = enumerator()) && !predicate(item));
+        return item;
     };
 
-    return [[OLBlockFastEnumerator alloc] initWithBlock:next];
+    return [[OLBlockEnumerator alloc] initWithBlock:next];
 }
 
 @end

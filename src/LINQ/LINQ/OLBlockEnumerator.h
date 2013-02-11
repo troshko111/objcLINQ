@@ -3,9 +3,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Funcs.h"
+#import "OLFuncs.h"
 
-@interface OLBlockFastEnumerator : NSObject <NSFastEnumeration>
+@interface OLBlockEnumerator : NSObject <NSFastEnumeration>
 
 - (id)initWithBlock:(OLEnumerator)next;
 
