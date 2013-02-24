@@ -7,22 +7,25 @@
 #import "OLFuncs.h"
 #import "OLGenerators.h"
 #import "OLBlockEnumerator.h"
+#import "OLContracts.h"
 
-@implementation NSArray(Concat)
+@implementation NSObject (OLConcatWith)
 
-- (id <NSFastEnumeration>)concat:(id <NSFastEnumeration>)second
+- (id <NSFastEnumeration>)concatWith:(id <NSFastEnumeration>)second
 {
-    OLEnumerator firstEnumerator = OLCreateEnumerator(self);
-    OLEnumerator secondEnumerator = OLCreateEnumerator(second);
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
 
-    OLEnumerator next = ^
+    OLGenerator firstGenerator = OLCreateGenerator(self);
+    OLGenerator secondGenerator = OLCreateGenerator(second);
+
+    OLGenerator next = ^
     {
         id item;
 
-        while ((item = firstEnumerator()))//TODO avoid calling first before every call to second
+        while ((item = firstGenerator()))
             return item;
 
-        while ((item = secondEnumerator()))
+        while ((item = secondGenerator()))
             return item;
 
         return item;

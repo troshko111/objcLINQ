@@ -5,8 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray(Repeat)
+@interface NSObject (OLRepeat)
 
-+(id <NSFastEnumeration>) repeat:(id)element count:(NSUInteger)count;
++ (id <NSFastEnumeration>)repeatElement:(id)element count:(NSUInteger)count;
 
 @end

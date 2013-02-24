@@ -6,9 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "OLFuncs.h"
 
-@interface NSArray(Select)
+@interface NSObject (OLSelect)
 
--(id<NSFastEnumeration>)select:(OLSelector)selector;
--(id<NSFastEnumeration>)selectIndexed:(OLSelectorWithIndex)selector;
+- (id <NSFastEnumeration>)select:(OLSelector)selector;
+- (id <NSFastEnumeration>)selectIndexed:(OLSelectorWithIndex)selector;
 
 @end

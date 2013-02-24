@@ -13,6 +13,9 @@
 #import "Repeat.h"
 #import "Count.h"
 #import "Concat.h"
+#import "SelectMany.h"
+#import "Any.h"
+#import "All.h"
 
 void selectDemo();
 void whereDemo();
@@ -23,6 +26,10 @@ void emptyDemo();
 void repeatDemo();
 void countDemo();
 void concatDemo();
+void selectManyDemo();
+void selectManyIndexedDemo();
+void anyDemo();
+void allDemo();
 
 int main(int argc, const char *argv[])
 {
@@ -37,12 +44,18 @@ int main(int argc, const char *argv[])
 //        rangeDemo();
 //
 //        emptyDemo();
-
+//
 //        repeatDemo();
-
+//
 //        countDemo();
+//
+//        concatDemo();
 
-        concatDemo();
+        selectManyDemo();
+        selectManyIndexedDemo();
+
+        anyDemo();
+        allDemo();
     }
 
     return 0;
@@ -63,7 +76,7 @@ void whereIndexedDemo()
     NSArray *numbers = @[@10, @11, @12, @13, @14, @15, @16, @17, @18, @19];
     id <NSFastEnumeration> half = [numbers whereIndexed:^(id item, NSUInteger i){return i < 5;}];
 
-    NSLog(@"Half of array 11..19:");
+    NSLog(@"Half of array 10..19:");
     for (id item in half)
         NSLog(@"%@", item);
 }
@@ -91,7 +104,7 @@ void selectIndexedDemo()
 void rangeDemo()
 {
     NSLog(@"Range from -5, 10 items total:");
-    for(NSNumber *number in [NSArray range:-5 count:10])
+    for(NSNumber *number in [NSArray rangeFrom:-5 count:10])
         NSLog(@"%@", number);
 }
 
@@ -106,7 +119,7 @@ void emptyDemo()
 void repeatDemo()
 {
     NSLog(@"1 repeated 10 times:");
-    for (id item in [NSArray repeat:@1 count:10])
+    for (id item in [NSArray repeatElement:@1 count:10])
         NSLog(@"%@", item);
 }
 
@@ -115,7 +128,10 @@ void countDemo()
     NSArray *array = @[@1, @2, @3, @4, @5];
     NSLog(@"count: %d", [array count]);
 
-    NSLog(@"even numbers count: %d", [array countPassingTest:^(id item){return [item integerValue] % 2 == 0;}]);
+    NSLog(@"even numbers count: %d", [array countMatchingPredicate:^(id item)
+    {
+        return [item integerValue] % 2 == 0;
+    }]);
 
 }
 
@@ -125,10 +141,46 @@ void concatDemo()
     NSArray *b = @[@3];
 
     NSLog(@"[1,2] + [3]:");
-    for (id item in [a concat:b])
+    for (id item in [a concatWith:b])
         NSLog(@"%@", item);
 
     NSLog(@"[1,2] + nil");
-    for (id item in [@[@1, @2] concat:nil])
+    for (id item in [@[@1, @2] concatWith:nil])
         NSLog(@"%@", item);
+}
+
+void selectManyDemo()
+{
+    NSArray *a = @[@[@1, @2], @[@3]];
+    NSLog(@"Select many over @[@[@1, @2], @[@3]]");
+    for (id number in [a selectMany:^(id item){ return item;}])
+    {
+        NSLog(@"%@", number);
+    }
+}
+
+void selectManyIndexedDemo()
+{
+    NSArray *a = @[@[@1, @2], @[@3]];
+    NSLog(@"Select many indexed over @[@[@1, @2], @[@3]]");
+    for (id number in [a selectManyIndexed:^(id item, NSUInteger index)
+    {
+        return [item concatWith:[NSArray arrayWithObjects:[NSNumber numberWithInteger:index], nil]];
+    }])
+    {
+        NSLog(@"%@", number);
+    }
+}
+
+void anyDemo()
+{
+    NSArray *a = @[@"Taras", @"Jon", @"Mike"];
+    NSLog(@"Any @[@\"Taras\", @\"Jon\", @\"Mike\"] %d", [a any]);
+    NSLog(@"Any @[@\"Taras\", @\"Jon\", @\"Mike\"] starts with T: %d", [a anyMatches:^(id item){return (int)([((NSString *) item) hasPrefix:@"T"]);}]);
+}
+
+void allDemo()
+{
+    NSArray *a = @[@1, @2, @3, @4, @5];
+    NSLog(@"All from @[@1, @2, @3, @4, @5] less than 2: %d", [a allMatch:^(id item){ return [item integerValue] < 2;}]);
 }

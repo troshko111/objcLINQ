@@ -6,11 +6,14 @@
 #import "Select.h"
 #import "OLBlockEnumerator.h"
 #import "OLGenerators.h"
+#import "OLContracts.h"
 
-@implementation NSArray (Select)
+@implementation NSObject (OLSelect)
 
 - (id <NSFastEnumeration>)select:(OLSelector)selector
 {
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
+
     if (!selector)
         return nil;
 
@@ -19,6 +22,8 @@
 
 - (id <NSFastEnumeration>)selectIndexed:(OLSelectorWithIndex)selector
 {
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
+
     if (!selector)
         return nil;
 
@@ -27,11 +32,11 @@
 
 - (id <NSFastEnumeration>)selectImpl:(OLSelector)selector
 {
-    OLEnumerator enumerator = OLCreateEnumerator(self);
+    OLGenerator generator = OLCreateGenerator(self);
 
-    OLEnumerator next = ^
+    OLGenerator next = ^
     {
-        id item = enumerator();
+        id item = generator();
         return item ? selector(item) : nil;
     };
 
@@ -40,12 +45,12 @@
 
 - (id <NSFastEnumeration>)selectIndexedImpl:(OLSelectorWithIndex)selector
 {
-    OLEnumerator enumerator = OLCreateEnumerator(self);
+    OLGenerator generator = OLCreateGenerator(self);
 
-    __block NSInteger index = 0;
-    OLEnumerator next = ^
+    __block NSUInteger index = 0;
+    OLGenerator next = ^
     {
-        id item = enumerator();
+        id item = generator();
         return item ? selector(item, index++) : nil;
     };
 

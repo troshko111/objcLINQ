@@ -7,6 +7,6 @@
 
 @interface OLBlockEnumerator : NSObject <NSFastEnumeration>
 
-- (id)initWithBlock:(OLEnumerator)next;
+- (id)initWithBlock:(OLGenerator)next;
 
 @end

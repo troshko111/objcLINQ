@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		6907606FE7F1074F07A3B050 /* Where.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076AE3585E63DF2656AFD0 /* Where.m */; };
 		690760ED35562D65A5596305 /* Empty.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907608AEBE7E70CE850A476 /* Empty.h */; };
+		69076116B2413E7623465341 /* All.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076D464D39158977918CE9 /* All.m */; };
 		6907612FDDA4775D499D086B /* SelectMany.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076511333B23E44D4135C8 /* SelectMany.m */; };
+		6907615E42B5CC58D632FE29 /* Any.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076238A205EFBE4F2BB944 /* Any.m */; };
 		6907618E350224368B464F9A /* Concat.m in Sources */ = {isa = PBXBuildFile; fileRef = 6907613775E97BF7F876A3A0 /* Concat.m */; };
 		690761CAFC764D645D21BA68 /* SelectMany.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907681EE79B962E920A7E1D /* SelectMany.h */; };
+		690763964C024A22AA056572 /* Any.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907653435A4CBAF95770770 /* Any.h */; };
 		6907644B30327634AEC7510F /* Select.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076267B38A935D4A2AA6C5 /* Select.m */; };
 		6907649A8AB217725DEE459C /* Repeat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69076964A802954273F1FB8C /* Repeat.h */; };
 		690764EF96915DF234894623 /* MAGenerator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69076F509E15B399C7F9203B /* MAGenerator.h */; };
@@ -19,6 +22,7 @@
 		69076604428D0D9BF45C8D91 /* OLBlockEnumerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 690765FD2B3FC8A70B5229B1 /* OLBlockEnumerator.m */; };
 		690767222C219EB4F58DB590 /* OLFuncs.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907612624C2A665B51CB1F5 /* OLFuncs.h */; };
 		6907674D6C24F50695B5891E /* MAGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076C592AAA3713E8804B23 /* MAGenerator.m */; };
+		69076776A06DE0BEBE8BAC7F /* OLContracts.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69076EBC93A09EA8BF78BC85 /* OLContracts.h */; };
 		690767BA598CA379B602B307 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076395478A0FE21AB61DB6 /* Empty.m */; };
 		6907682D1F33E2E1EA0AE18E /* OLBlockEnumerator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69076AF93C0434CE3092B76A /* OLBlockEnumerator.h */; };
 		69076A07863AC13827E61A34 /* Concat.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 690762C21A3C9998D4A09BB2 /* Concat.h */; };
@@ -29,6 +33,7 @@
 		69076B7FAA1231A50142E363 /* Count.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907629E1D5C09D353FB35ED /* Count.h */; };
 		69076C493BBB7EC53855FF6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 690766554105A2594123C778 /* main.m */; };
 		69076CED8D86C830A09B717C /* Repeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 69076DB9FE19B3D09D76E07A /* Repeat.m */; };
+		69076D457D4F76DF4D18B4C9 /* All.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69076C3AECCCE3758603A7E5 /* All.h */; };
 		69076F14F8285084A8254383 /* Select.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 690766027B46AF9FFF18D2BF /* Select.h */; };
 		69076FBBD114394805144448 /* Where.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6907636BEB2FF18D7531FEEE /* Where.h */; };
 		76D8B45C16C92A4300BB344A /* OLGenerators.m in Sources */ = {isa = PBXBuildFile; fileRef = 690766FA98B0F7094B5AE82D /* OLGenerators.m */; };
@@ -53,6 +58,9 @@
 				69076B7FAA1231A50142E363 /* Count.h in CopyFiles */,
 				69076A07863AC13827E61A34 /* Concat.h in CopyFiles */,
 				690761CAFC764D645D21BA68 /* SelectMany.h in CopyFiles */,
+				69076776A06DE0BEBE8BAC7F /* OLContracts.h in CopyFiles */,
+				69076D457D4F76DF4D18B4C9 /* All.h in CopyFiles */,
+				690763964C024A22AA056572 /* Any.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -64,6 +72,7 @@
 		6907613775E97BF7F876A3A0 /* Concat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Concat.m; sourceTree = "<group>"; };
 		690761773E5E91C8E1C11FD7 /* OLGenerators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGenerators.h; sourceTree = "<group>"; };
 		69076213EFEB1C5667EA3FA2 /* Range.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Range.m; sourceTree = "<group>"; };
+		69076238A205EFBE4F2BB944 /* Any.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Any.m; sourceTree = "<group>"; };
 		69076267B38A935D4A2AA6C5 /* Select.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Select.m; sourceTree = "<group>"; };
 		6907629E1D5C09D353FB35ED /* Count.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Count.h; sourceTree = "<group>"; };
 		690762C21A3C9998D4A09BB2 /* Concat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Concat.h; sourceTree = "<group>"; };
@@ -71,6 +80,7 @@
 		69076395478A0FE21AB61DB6 /* Empty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
 		69076465A25F474E819558E4 /* Range.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Range.h; sourceTree = "<group>"; };
 		69076511333B23E44D4135C8 /* SelectMany.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectMany.m; sourceTree = "<group>"; };
+		6907653435A4CBAF95770770 /* Any.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Any.h; sourceTree = "<group>"; };
 		690765FD2B3FC8A70B5229B1 /* OLBlockEnumerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLBlockEnumerator.m; sourceTree = "<group>"; };
 		690766027B46AF9FFF18D2BF /* Select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Select.h; sourceTree = "<group>"; };
 		690766554105A2594123C778 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -83,8 +93,11 @@
 		69076AD2EDD690EA4537E1FC /* Count.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Count.m; sourceTree = "<group>"; };
 		69076AE3585E63DF2656AFD0 /* Where.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Where.m; sourceTree = "<group>"; };
 		69076AF93C0434CE3092B76A /* OLBlockEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLBlockEnumerator.h; sourceTree = "<group>"; };
+		69076C3AECCCE3758603A7E5 /* All.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = All.h; sourceTree = "<group>"; };
 		69076C592AAA3713E8804B23 /* MAGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAGenerator.m; path = ../../../thirdparty/MAGenerator/MAGenerator.m; sourceTree = "<group>"; };
+		69076D464D39158977918CE9 /* All.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = All.m; sourceTree = "<group>"; };
 		69076DB9FE19B3D09D76E07A /* Repeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repeat.m; sourceTree = "<group>"; };
+		69076EBC93A09EA8BF78BC85 /* OLContracts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLContracts.h; sourceTree = "<group>"; };
 		69076F509E15B399C7F9203B /* MAGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAGenerator.h; path = ../../../thirdparty/MAGenerator/MAGenerator.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,6 +178,10 @@
 				690762C21A3C9998D4A09BB2 /* Concat.h */,
 				69076511333B23E44D4135C8 /* SelectMany.m */,
 				6907681EE79B962E920A7E1D /* SelectMany.h */,
+				69076D464D39158977918CE9 /* All.m */,
+				69076C3AECCCE3758603A7E5 /* All.h */,
+				69076238A205EFBE4F2BB944 /* Any.m */,
+				6907653435A4CBAF95770770 /* Any.h */,
 			);
 			name = Queries;
 			sourceTree = "<group>";
@@ -185,6 +202,7 @@
 				6907612624C2A665B51CB1F5 /* OLFuncs.h */,
 				690766FA98B0F7094B5AE82D /* OLGenerators.m */,
 				690761773E5E91C8E1C11FD7 /* OLGenerators.h */,
+				69076EBC93A09EA8BF78BC85 /* OLContracts.h */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -248,6 +266,8 @@
 				69076B2B478ED3B49E505C61 /* Count.m in Sources */,
 				6907618E350224368B464F9A /* Concat.m in Sources */,
 				6907612FDDA4775D499D086B /* SelectMany.m in Sources */,
+				69076116B2413E7623465341 /* All.m in Sources */,
+				6907615E42B5CC58D632FE29 /* Any.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

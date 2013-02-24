@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray(Empty)
-+(id<NSFastEnumeration>) empty;
+@interface NSObject (OLEmpty)
+
++ (id <NSFastEnumeration>)empty;
+
 @end

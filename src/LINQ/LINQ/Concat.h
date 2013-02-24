@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray(Concat)
--(id <NSFastEnumeration>) concat:(id<NSFastEnumeration>)second;
+@interface NSObject (OLConcatWith)
+
+- (id <NSFastEnumeration>)concatWith:(id <NSFastEnumeration>)second;
+
 @end

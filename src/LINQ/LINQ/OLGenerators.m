@@ -1,6 +1,6 @@
 #import "OLGenerators.h"
 
-GENERATOR(id, OLCreateEnumerator(id <NSFastEnumeration> collection), (void))
+GENERATOR(id, OLCreateGenerator(id <NSFastEnumeration> collection), (void))
 {
     NSFastEnumerationState state = {0};
     __unsafe_unretained id *const stackBuffer = (__unsafe_unretained id *const)calloc(16, sizeof(id));

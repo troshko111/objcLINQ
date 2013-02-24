@@ -1,3 +1,3 @@
 #import "MAGenerator.h"
 
-GENERATOR_DECL(id, OLCreateEnumerator(id <NSFastEnumeration> collection), (void));
+GENERATOR_DECL(id, OLCreateGenerator(id <NSFastEnumeration> collection), (void));

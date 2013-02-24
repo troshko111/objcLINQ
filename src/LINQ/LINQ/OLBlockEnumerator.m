@@ -7,10 +7,10 @@
 
 @implementation OLBlockEnumerator
 {
-    OLEnumerator _next;
+    OLGenerator _next;
 }
 
-- (id)initWithBlock:(OLEnumerator)next
+- (id)initWithBlock:(OLGenerator)next
 {
     self = [super init];
     if (self)
@@ -24,7 +24,7 @@
 {
     if (state->state == 0)
     {
-        state->mutationsPtr = (__bridge void*)self;
+        state->mutationsPtr = (__bridge void *) self;
         state->state = 1;
     }
 

@@ -6,7 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "OLFuncs.h"
 
-@interface NSArray(Count)
--(NSUInteger) count;
--(NSUInteger) countPassingTest:(OLPredicate)predicate;
+@interface NSObject (OLCount)
+
+- (NSUInteger)count;
+- (NSUInteger)countMatchingPredicate:(OLPredicate)predicate;
+
 @end

@@ -1,11 +1,14 @@
 #import "Where.h"
 #import "OLBlockEnumerator.h"
 #import "OLGenerators.h"
+#import "OLContracts.h"
 
-@implementation NSArray (Where)
+@implementation NSObject (OLWhere)
 
 - (id <NSFastEnumeration>)where:(OLPredicate)predicate
 {
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
+
     if (!predicate)
         return nil;
 
@@ -14,6 +17,8 @@
 
 - (id <NSFastEnumeration>)whereIndexed:(OLPredicateWithIndex)predicate
 {
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
+
     if (!predicate)
         return nil;
 
@@ -22,12 +27,12 @@
 
 - (id <NSFastEnumeration>)whereImpl:(OLPredicate)predicate
 {
-    OLEnumerator enumerator = OLCreateEnumerator(self);
+    OLGenerator generator = OLCreateGenerator(self);
 
-    OLEnumerator next = ^
+    OLGenerator next = ^
     {
         id item;
-        while ((item = enumerator()) && !predicate(item));
+        while ((item = generator()) && !predicate(item));
         return item;
     };
 
@@ -36,13 +41,13 @@
 
 - (id <NSFastEnumeration>)whereIndexedImpl:(OLPredicateWithIndex)predicate
 {
-    OLEnumerator enumerator = OLCreateEnumerator(self);
+    OLGenerator generator = OLCreateGenerator(self);
 
     __block NSUInteger index = 0;
-    OLEnumerator next = ^
+    OLGenerator next = ^
     {
         id item;
-        while ((item = enumerator()))
+        while ((item = generator()))
         {
             if (predicate(item, index++))
                 return item;

@@ -5,22 +5,27 @@
 
 #import "Count.h"
 #import "OLGenerators.h"
+#import "OLContracts.h"
 
-@implementation NSArray (Count)
+@implementation NSObject (OLCount)
 
 - (NSUInteger)count
 {
-    OLEnumerator enumerator = OLCreateEnumerator(self);
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
+
+    OLGenerator generator = OLCreateGenerator(self);
 
     NSUInteger count = 0;
-    while (enumerator())
+    while (generator())
         count++;
 
     return count;
 }
 
-- (NSUInteger)countPassingTest:(OLPredicate)predicate
+- (NSUInteger)countMatchingPredicate:(OLPredicate)predicate
 {
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
+
     if (!predicate)
         return 0;
 
@@ -29,11 +34,11 @@
 
 - (NSUInteger)countPassingTestImpl:(OLPredicate)predicate;
 {
-    OLEnumerator enumerator = OLCreateEnumerator(self);
+    OLGenerator generator = OLCreateGenerator(self);
 
     id item;
     NSUInteger count = 0;
-    while ((item = enumerator()))
+    while ((item = generator()))
     {
         if (predicate(item))
             count++;

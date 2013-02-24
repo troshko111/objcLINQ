@@ -1,0 +1,1 @@
+#define OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration if (![self conformsToProtocol:@protocol(NSFastEnumeration)]) return 0;

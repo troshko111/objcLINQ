@@ -5,6 +5,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray(Range)
-+(id<NSFastEnumeration>)range:(NSInteger)start count:(NSUInteger)count;
+@interface NSObject (OLRange)
+
++ (id <NSFastEnumeration>)rangeFrom:(NSInteger)start count:(NSUInteger)count;
+
 @end

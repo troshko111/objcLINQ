@@ -2,13 +2,14 @@
 // All rights reserved.
 //
 
-
 #import "Empty.h"
+#import "OLContracts.h"
 
-@implementation NSArray(Empty)
+@implementation NSObject (OLEmpty)
 
 + (id <NSFastEnumeration>)empty
 {
+    OL_ENSURE_SELF_CONFORMS_TO_NSFastEnumeration
     return nil;
 }
 
