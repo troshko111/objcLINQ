@@ -1,4 +1,4 @@
 objcLINQ
 ========
 
-Full LINQ support for objective-c and even more
+POC, LINQ for objective-c, (with real lazy evaluation)
